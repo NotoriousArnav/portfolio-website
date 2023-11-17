@@ -19,6 +19,12 @@ const routes = [
     path: '/lan',
     name: "leaveanote",
     component: () => import('../views/leaveanote.vue')
+  },
+  {
+    path: '/blogs/:slug',
+    name: 'BlogPost',
+    component: () => import('../views/BlogPost.vue'),
+    props: true,
   }
 ]
 

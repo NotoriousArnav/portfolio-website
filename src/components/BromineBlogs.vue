@@ -8,8 +8,10 @@
     <br>
     <ul class="sm:grid sm:grid-cols-2 gap-4">
         <li class="border-0 p-2 hover:p-3 rounded hover:border-2 hover:backdrop-blur-xl transition-all duration-100" v-for="(blog, index) in blogs" :key="index">
-          <h2 class="text-xl font-bold mb-2">{{ blog.title }}</h2>
-          <p><strong>Created at:</strong> {{ blog.created_at }}</p>
+          <router-link :to="'/blogs/'+blog.slug">
+            <h2 class="text-xl font-bold mb-2">{{ blog.title }}</h2>
+            <p><strong>Created at:</strong> {{ blog.created_at }}</p>
+          </router-link>
         </li>
     </ul>
   </div>  
@@ -38,7 +40,6 @@ export default {
   methods: {
     async fetchData() {
       this.loading = true;
-      this.url = this.env ? '/api/blogs/?uuid=&author__username=NotoriousArnav' : 'https://bromine.vercel.app/api/blogs/?uuid=&author__username=NotoriousArnav'
       this.url = '/api/blogs/?uuid=&author__username=NotoriousArnav'
       try {
         const response = await axios.get(this.url);
