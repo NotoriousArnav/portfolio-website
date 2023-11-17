@@ -1,4 +1,5 @@
 <template>
+  <title>{{ blog.title }}</title>
   <div v-show="loading" class="container mx-auto mt-8  p-4 m-5 border-2 border-black rounded-sm backdrop-blur-md backdrop-brightness-50 text-white">
     <h1 class="text-3xl">Loading...</h1>
   </div>
@@ -11,7 +12,7 @@
       </a>
     </h1>
     <div class="mb-4">{{ formatDate(blog.created_at) }}</div>
-    <div v-html="blog.content" class="prose text-white"></div>
+    <article v-html="blog.content" class="prose text-white"></article>
   </div>
 </template>
 
@@ -58,5 +59,8 @@ export default {
   color: #fff!important;
 }
 /* Add your styles here using Tailwind CSS classes */
+.prose {
+  max-width: 100%!important;
+}
 </style>
 
