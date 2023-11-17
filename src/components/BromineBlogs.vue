@@ -39,6 +39,7 @@ export default {
     async fetchData() {
       this.loading = true;
       this.url = this.env ? '/api/blogs/?uuid=&author__username=NotoriousArnav' : 'https://bromine.vercel.app/api/blogs/?uuid=&author__username=NotoriousArnav'
+      this.url = '/api/blogs/?uuid=&author__username=NotoriousArnav'
       try {
         const response = await axios.get(this.url);
         if (Array.isArray(response.data)) {
