@@ -2,7 +2,8 @@
   <div class="gap-2">
     <h1 class="text-5xl">My Blogs on Bromine</h1>
     <div v-show="loading">
-      Loading...
+      Loading...It might Take a While!
+      <span v-show="env">{{ url }}</span>
     </div>
     <br>
     <ul class="sm:grid sm:grid-cols-2 gap-4">
@@ -26,7 +27,9 @@ export default {
   data () {
     return {
       blogs: [],
-      loading: false
+      loading: false,
+      env: (process.env.NODE_ENV == 'development'),
+      url: ""
     }
   },
   mounted() {
@@ -35,8 +38,9 @@ export default {
   methods: {
     async fetchData() {
       this.loading = true;
+      this.url = this.env ? '/api/blogs/?uuid=&author__username=NotoriousArnav' : 'https://bromine.vercel.app/api/blogs/?uuid=&author__username=NotoriousArnav'
       try {
-        const response = await axios.get('/api/blogs/?uuid=&author__username=NotoriousArnav');
+        const response = await axios.get(this.url);
         if (Array.isArray(response.data)) {
           this.blogs = response.data;
           this.loading=false
