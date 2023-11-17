@@ -39,14 +39,16 @@
 In my free time, I immerse myself in a symphony of hobbies. 🎶 Whether it's belting out tunes or creating melodies on my synth, music is my refuge. 🎹 I dabble in a bit of online exploration 🕵️‍♂️, find peace in sketching landscapes 🎨, and get my hands dirty with AI, building automation scripts to simplify tasks. 🤖 Each hobby adds a unique rhythm to my life!
       </p>
       <br>
-      <ul>
-        <h3 class="text-3xl">Socials</h3>
+      <ul class="grid gap-4 sm:grid-cols-2">
+        <h3 class="text-3xl sm:col-span-2">Socials</h3>
         <li class="text-lg" v-for="(item, index) in social_links" :key="index">
-          <span class="">
+          <span class="group">
             <!--<font-awesome-icon :icon="item.faUser"  />-->
             <a :href="item.link">
               <font-awesome-icon :icon="item.faClass" />
               {{ item.handle }}
+              <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
+
             </a>
           </span>
         </li>

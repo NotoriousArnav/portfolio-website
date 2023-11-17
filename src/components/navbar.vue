@@ -11,19 +11,20 @@
       </button>
 
       <!-- Navbar Links -->
+
       <div :class="{ 'hidden': !isNavbarOpen }" class="lg:flex flex-grow items-center transition-all">
-        <a href="#" class="group text-white duration-200 transition text-sm sm:text-lg px-1 py-1">
+        <router-link to="/" class="group text-white duration-200 transition text-sm sm:text-lg px-1 py-1">
           Home
           <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
-        </a>
-        <a href="#" class="group text-white duration-200 transition text-sm sm:text-lg px-1 py-1">
+        </router-link>
+        <router-link to="/blogs" class="group text-white duration-200 transition text-sm sm:text-lg px-1 py-1">
           Blogs
           <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
-        </a>
-        <a href="#" class="group text-white duration-200 transition text-sm sm:text-lg px-1 py-1">
-          Leave a Text
+        </router-link>
+        <router-link to="/lan" class="group text-white duration-200 transition text-sm sm:text-lg px-1 py-1">
+          Leave a Note
           <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
-        </a>
+        </router-link>
       </div>
     </div>
   </nav>
