@@ -68,10 +68,12 @@ export default {
   data () {
     return {
       social_links: [
+        { platform:"YouTube", handle:"NotoriousArnav", link:"https://www.youtube.com/@NotoriousArnav", faClass: ['fab', 'youtube']},
         { platform:"GitHub", handle:"NotoriousArnav", link:"https://github.com/NotoriousArnav", faClass: ['fab', 'github']},
         { platform:"Email", handle:"Email", link:"mailto:justarnav2004@onmail.com", faClass: ['fas', 'envelope'] },
         { platform:"Twitter | X", handle: "@arnv2004", link: "https://twitter.com/arnv2004", faClass: ['fab', 'twitter'] },
         { platform:"BroCode Tech Community", handle: "BroCode Tech Community", link: "https://brocode-tech.netlify.app/", faClass: "" },
+        { platform:"Bromine Blogs", handle: "Blogs", link: "https://bromine.vercel.app/profile/NotoriousArnav/", faClass: "" },
         { platform:"Intagram", handle: "@arnv2004", link: "https://instagram.com/arnv2004", faClass: ['fab', 'instagram'] }
       ]
     }
