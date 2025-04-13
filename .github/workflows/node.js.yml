@@ -37,8 +37,8 @@ jobs:
           curl -fsSL https://get.pnpm.io/install.sh | sh -
       - name: Install and Build
         run: |
-          npm ci
-          npm run build
+          pnpm i
+          pnpm run build
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
