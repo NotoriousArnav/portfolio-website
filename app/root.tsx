@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Links,
   Meta,
@@ -8,6 +10,8 @@ import {
 import type { LinksFunction } from "@remix-run/node";
 
 import "./tailwind.css";
+
+import NavBar from "./components/NavBar";
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -32,6 +36,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
+        <NavBar />
         {children}
         <ScrollRestoration />
         <Scripts />

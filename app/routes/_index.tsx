@@ -1,11 +1,9 @@
 import type { MetaFunction } from "@remix-run/node";
-import {
-  animate,
-  createTimeline,
-  createTimer,
-} from 'animejs';
-import neopandaLogo from '../../public/neopanda.svg';
+import { animate, createDraggable, utils, createSpring, createScope } from 'animejs';
+import neopanda from '/public/neopanda.svg';
+import abstractLines from '../../public/jarvis.svg';
 import { useEffect, useRef, useState } from "react";
+
 
 export const meta: MetaFunction = () => {
   return [
@@ -15,29 +13,51 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  
+  const root = useRef(null);
+  const scope = useRef(null);
+  const [i, setI] = useState(0);
+
   useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-    console.log(isDarkMode);
-  }, [isDarkMode]);
+    scope.current = createScope({root}).add(scope => {
+
+      createDraggable('#neopanda', {
+        container: [0, 0, 0, 0],
+        release: createSpring({ stiffness: 200 })
+      });
+
+      scope.add('rotatePanda', (i) => {
+        animate('#neopanda', {
+          rotate: i * 360,
+          ease: 'out(4)',
+          duration: 1000,
+        });
+      })
+
+    })
+    return () => scope.current.revert();
+  }, [])
+
+  const handleRotation = () => {
+    const r = i+1;
+    setI(r);
+    scope.current.methods.rotatePanda(r);
+  }
+  
 
   return (
-    <div className="flex h-screen items-center justify-center text-center gap-4 dark:text-white">
-      <div className="justify-center flex-col items-center text-center">
-        <img src={neopandaLogo} alt="Neopanda Logo" className="w-full dark:invert" />
-        <h1 className="text-3xl font-bold">Hi, I am Arnav!</h1>
-        <p className="text-lg">Sorry, but this site is still under construction.</p>
-        <button
-            className="bg-gray-200 hover:bg-gray-300 active:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded"
-            onClick={(e) => setIsDarkMode(!isDarkMode)}
-        >
-            {isDarkMode ? "Light Mode" : "Dark Mode"}
-        </button>
+    <div ref={root} id="home" className="flex text-center items-center justify-center h-svh">
+      <div id="name" className="grid p-4 border-2 border-dashed border-gray-500 hover:border-gray-600 active:border-gray-700 active:border-4 items-center text-center justify-center">
+        <img id="neopanda" className="w-64 m-auto" src={neopanda} alt="neopanda logo" onClick={handleRotation} />
+        <h1 className="text-4xl font-bold p-4">
+          Hello, I'm&nbsp;
+          <span>
+            Arnav
+          </span>
+          !
+        </h1>
+        <p>
+          This might be the Second Iteration, but this website is still under development.
+        </p>
       </div>
     </div>
   );
