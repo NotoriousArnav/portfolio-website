@@ -11,8 +11,13 @@ body {
 
   @apply animate-gradient-move;
 
-
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
+  }
+}
+
+.aboutSection {
+  h1{
+    @apply text-4xl font-bold;
   }
 }
