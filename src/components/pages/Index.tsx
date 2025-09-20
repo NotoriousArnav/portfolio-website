@@ -19,30 +19,23 @@ export async function getMarkdownContent({
   });
 }
 
-export default function Index() {
+export default function Index({
+  render,
+}:{
+  render?: boolean;
+}) {
   const [markdownContent, setMarkdownContent] = React.useState<string>("Loading...");
-  const [renderToHtml, setRenderToHtml] = React.useState<boolean>(false);
 
   React.useEffect(() => {
     getMarkdownContent({
       url: new URL("/portfolio.md", import.meta.url).href,
-      renderToHtml: renderToHtml,
+      renderToHtml: render,
     }).then(content => setMarkdownContent(content));
-  }, []);
+  }, [render]);
 
   return (
     <div className="text-3xl w-[69vw]">
-      <button
-        onClick={() => {
-          setRenderToHtml(!renderToHtml);
-          getMarkdownContent({
-            url: new URL("/portfolio.md", import.meta.url).href,
-            renderToHtml: !renderToHtml,
-          }).then(content => setMarkdownContent(content));
-        }}
-      >
-        {renderToHtml ? "Show Raw Markdown" : "Render to HTML"}
-      </button>
+
       <Windows98CommandPrompt
         className="w-full m-0 p-0"
       >

@@ -5,7 +5,7 @@ import * as THREE from 'three';
 import { TextureLoader } from 'three';
 import './App.css';
 import { Routes, Route } from 'react-router';
-import Index from './components/pages/Index.tsx';
+import Index, {getMarkdownContent} from './components/pages/Index.tsx';
 import { Win98Window, Win98StatusBar } from './components/ui/Windows98.tsx';
 
 function Encapsulate({
@@ -92,6 +92,7 @@ function LeftSection({
 function App() {
   const [hovered, setHovered] = useState<boolean>(false);
   const [fullscreen, setfullscreen] = useState<boolean>(false);
+  const [renderToHtml, setRenderToHtml] = useState<boolean>(true);
 
   return (
     <div
@@ -107,7 +108,7 @@ function App() {
         <br />
         <span className="text-4xl p-4">Welcome to my Portfolio!</span>
         <br />
-        <span className="text-xl p-2">I am a passionate developer and more.</span>
+        <span className="text-xl p-2">I am a developer and more.</span>
         <br />
         <button
           className="m-2 p-2 w-32"
@@ -125,6 +126,17 @@ function App() {
         >
           {fullscreen?'Exit Full Screen':'Full Screen'}
         </button>
+      <button
+        onClick={() => {setRenderToHtml(!renderToHtml);}}
+        className="m-2 p-2"
+      >
+        {renderToHtml ? "Show Raw Markdown" : "Render to HTML"}
+      </button>
+      <a className="m-2 p-2" href="/portfolio.md" download="portfolio.md">
+        <button>
+          Download Portfolio
+        </button>
+      </a>
         <Win98StatusBar
           fields={["Visit Repo on GitHub", "Copyleft 2025"]}
           className="mt-4 text-lg gap-4"
@@ -132,7 +144,7 @@ function App() {
       </Win98Window>
     </Encapsulate>
       <Routes>
-        <Route path="/*" element={<Encapsulate className="h-[96vh] border-green-500 border-l-2"><Index /></Encapsulate>} />
+        <Route path="/*" element={<Encapsulate className="h-[96vh] border-green-500 border-l-2"><Index render={renderToHtml}  /></Encapsulate>} />
       </Routes>
     </div>
   )
