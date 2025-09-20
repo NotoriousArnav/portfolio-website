@@ -4,7 +4,7 @@
 
 📍 Siliguri, West Bengal, India  
 🎓 BCA Student at Siliguri Institute of Technology (2023–2027)  
-📧 [justarnav2004@gmail.com](mailto:justarnav2004@gmail.com)  
+📧 [arnavghosh67@gmail.com](mailto:arnavghosh67@gmail.com)  
 🌐 [arnavg.netlify.app](https://arnavg.netlify.app)  
 🐙 [GitHub: NotoriousArnav](https://github.com/NotoriousArnav)  
 💼 [LinkedIn: arnv2004](https://www.linkedin.com/in/arnv2004/)
@@ -74,7 +74,7 @@ I regularly write articles on [Bromine](https://bromine.vercel.app/profile/Notor
 
 Feel free to reach out to me through any of the following platforms:
 
-- 📧 Email: [justarnav2004@gmail.com](mailto:justarnav2004@gmail.com)
+- 📧 Email: [arnavghosh67@gmail.com](mailto:arnavghosh67@gmail.com)
 - 🐙 GitHub: [NotoriousArnav](https://github.com/NotoriousArnav)
 - 💼 LinkedIn: [arnv2004](https://www.linkedin.com/in/arnv2004/)
 - 🌐 Portfolio: [arnavg.netlify.app](https://arnavg.netlify.app)
