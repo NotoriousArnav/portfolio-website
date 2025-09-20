@@ -1,11 +1,10 @@
-import React, { Suspense, useState, useEffect, useRef} from 'react';
-import { Canvas, useLoader } from '@react-three/fiber'
-import { OrbitControls, useGLTF, useHelper, Edges } from '@react-three/drei'
+import React, { Suspense, useState} from 'react';
+import { Canvas } from '@react-three/fiber'
+import { OrbitControls, useGLTF } from '@react-three/drei'
 import * as THREE from 'three';
-import { TextureLoader } from 'three';
 import './App.css';
 import { Routes, Route } from 'react-router';
-import Index, {getMarkdownContent} from './components/pages/Index.tsx';
+import Index from './components/pages/Index.tsx';
 import { Win98Window, Win98StatusBar } from './components/ui/Windows98.tsx';
 
 function Encapsulate({

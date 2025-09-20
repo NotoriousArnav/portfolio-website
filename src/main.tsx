@@ -3,7 +3,6 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 import { BrowserRouter } from "react-router";
-import ReactMarkdown from 'react-markdown';
 import { getMarkdownContent } from './components/pages/Index.tsx';
 
 // Check if the Device Width is less than 768px and height is less than 1024px

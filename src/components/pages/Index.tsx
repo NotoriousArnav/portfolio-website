@@ -8,7 +8,7 @@ export async function getMarkdownContent({
 }:{
   url: string,
   renderToHtml?: boolean,
-}){
+}): Promise<any> {
   return fetch(url).then(res => res.text()).then(text => {
     if(renderToHtml){
       return <ReactMarkdown>
@@ -24,7 +24,7 @@ export default function Index({
 }:{
   render?: boolean;
 }) {
-  const [markdownContent, setMarkdownContent] = React.useState<string>("Loading...");
+  const [markdownContent, setMarkdownContent] = React.useState<any>("Loading...");
 
   React.useEffect(() => {
     getMarkdownContent({
