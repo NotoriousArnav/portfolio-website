@@ -13,9 +13,11 @@ BCA Student at Siliguri Institute of Technology (2023-2027)
 
 ## About Me
 
-I'm Arnav Ghosh, a developer with 70+ open-source projects spanning AI, cybersecurity, reverse engineering, embedded systems, full-stack development, and creative tech. I build tools that solve real problems -- from web scraping APIs and malicious USB detectors to AI-powered database agents and audio samplers for live performance.
+I'm Arnav Ghosh, a developer with 70+ open-source projects spanning AI, cybersecurity, reverse engineering, embedded systems,full-stack development, and creative tech.
+I build tools that solve real problems -- from web scraping APIs and malicious USB detectors to AI-powered database agents and audio samplers for live performance.
 
-As the founder of the BroCode Tech Community, I aim to empower developers through collaboration and open-source contributions. My interests range from LLM-powered agents and OSINT to bare-metal C on microcontrollers and analog synthesizers.
+As the founder of the BroCode Tech Community, I aim to empower developers through collaboration and open-source contributions.
+My interests range from LLM-powered agents and OSINT to bare-metal C on microcontrollers and analog synthesizers.
 
 ---
 
